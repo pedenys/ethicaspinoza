@@ -1,0 +1,357 @@
+html {
+    font-size: 14px;
+    --fsize: calc(14px + 6 * ((100vw - 320px) / 480));
+}
+
+@media screen and (min-width: 320px) {
+    html {
+        font-size: calc(14px + 6 * ((100vw - 320px) / 480));
+    }
+    .container {
+        width: 95%;
+        margin: 0 auto;
+    }
+    .container p {
+        line-height: calc(1.2em + 0.35 * ((100vw - 320px) / 480)) !important;
+    }
+    .modal-about {
+        width: 80vw;
+    }
+    .options.sticky{
+        /* background-color:red; */
+        top:0.5em;
+    }
+    .options.sticky img{
+        width:25px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    html {
+        font-size: 20px;
+    }
+    .container {
+        width: 85%;
+    }
+    .container p {
+        line-height: 1.55em;
+    }
+    .modal-about {
+        width: auto;
+    }
+    .options.sticky{
+        /* background-color:green; */
+        top:2em;
+        right:1em;
+    }
+    .options.sticky img{
+        width:3em ;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .container {
+        width: 75%
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .container {
+        width: 65%;
+    }
+    .options.sticky{
+        /* background-color:green; */
+        top:2em;
+        right:2em;
+    }
+    .options.sticky img{
+        width:3em ;
+    }
+}
+
+html,
+body {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Spectral", Arial, Helvetica, serif;
+}
+
+.container p,
+h2,
+h3,
+h4 {
+    margin: 0;
+}
+
+.scolie,
+.demonstration,
+.corollaire {
+    font-weight: 200;
+}
+
+.proposition p {
+    font-weight: 400;
+}
+
+h2 {
+    font-weight: 800;
+    font-size: calc(1.2rem + 2.5vmin);
+}
+
+h3 {
+    font-size: calc(0.9rem + 2.5vmin);
+}
+
+h3,
+h4,
+b {
+    font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    letter-spacing: -1px;
+}
+
+.axiome-title,
+.definition-title,
+.proposition-title,
+.appendice-title {
+    margin-top: 1em;
+}
+
+.container a {
+    text-decoration: underline dashed;
+    color: inherit;
+}
+
+img {
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.visible {
+    display: block !important;
+}
+
+input {
+    width: 10%;
+}
+
+/* .container div > div:last-of-type > p:last-of-type, */
+
+.container>div[id*='partI-'] {
+    margin-bottom: 2vw;
+}
+
+.container p {
+    margin-bottom: 0.5vw;
+}
+
+div[id*='partI-proposition']>h4,
+div[id*='partI-definition']>h4,
+div[id*='partI-axiome']>h4 {
+    color: #e59400;
+}
+
+.proposition h4+p {
+    font-style: italic;
+    margin: 0.4vw 0 0.6vw 0;
+}
+
+/* header */
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1 !important;
+}
+
+.header h1 {
+    font-size: 12vw;
+    margin: 0;
+    font-weight: 200;
+    font-style: italic;
+    margin-top: 2rem;
+    margin-bottom: 2vh;
+    color: #e59400;
+}
+
+.header h2 {
+    margin: 0;
+    font-weight: 200;
+    margin-bottom: 4vh;
+    font-size: 5vw;
+}
+
+/* options */
+
+.options {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    /* display: block;
+    width:100%;
+    margin: 0 auto; */
+}
+
+.options .open-about {
+    margin-left: 1em;
+}
+
+button.open:hover{
+    opacity: 0.8;
+}
+
+button {
+    color: #e59400;
+    border: 0.13rem solid #e59400;
+    font-family: "Spectral", Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    background-color:white;
+}
+
+.close,
+.close-mep,
+.close-about {
+    max-width: 70%;
+    display: block;
+    margin: 1rem auto 0.7rem auto;
+}
+
+.options button {
+    /* background-color: white; */
+    padding: 0.3em 0.8em;
+    font-weight: 700 !important;
+    /* letter-spacing: 1px; */
+    border-radius: 100px;
+    font-size: 1rem;
+}
+
+/* overlay */
+
+.overlay,
+.overlay-mep,
+.overlay-about {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: .5s ease;
+    z-index: -1;
+}
+
+.overlay.active,
+.overlay-mep.active,
+.overlay-about.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.modal,
+.modal-mep,
+.modal-about {
+    max-height: calc(100% - 100px);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: 80vw;
+    transform: translate(-50%, -50%);
+    color: #4a5666;
+    background: linear-gradient(to bottom right, white, #F8F8F8) !important;
+    box-shadow: 0 15px 20px -15px rgba(0, 0, 0, 0.3), 0 35px 50px -25px rgba(0, 0, 0, 0.3), 0 85px 60px -25px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.modal form,
+.modal-mep form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1vw;
+}
+
+.modal h2,
+.modal-mep h2,
+.modal-about h2 {
+    margin: 0;
+    font-weight: 400;
+    padding: 1rem;
+    border-bottom: 1px solid #DDE0E7;
+    margin-bottom: 0.5rem;
+    font-size: calc(16px + 6 * ((100vw - 320px) / 480));
+    text-align: center;
+}
+
+.modal form span,
+.modal-mep form span {
+    /* font-size:calc(14px + 6 * ((100vw - 320px) / 480)); */
+    color: #666 !important;
+}
+
+.modal p,
+.modal-mep p,
+.modal-about p {
+    margin: 0 1rem 0.5rem 1rem;
+    /* font-size: calc(14px + 6 * ((100vw - 320px) / 480)); */
+}
+
+.modal.active,
+.modal-mep.active,
+.modal-about.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-about a {
+    color: #e59400;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* sticky header */
+.container {
+    margin-bottom: 6vh;
+}
+
+.sticky {
+    position: fixed;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.0)
+}
+.sticky > button:nth-child(2){
+    display:none;
+    background-color: rgba(0, 0, 0, 0.0)
+}
+.sticky button{
+    border:none;
+    background-color: rgba(0, 0, 0, 0.0)
+}
+.sticky img{
+    height:auto;
+    background-color: rgba(0, 0, 0, 0.0)
+}
+/*not related to*/
+
+body {
+    color: #24272B;
+}
+.footer{
+    text-align: center;
+    font-size:0.8em;
+}
