@@ -2,7 +2,7 @@
 
 > Spinoza's Ethics for the current century made with plain HTML, CSS and JS.
 
-<p align="center">*⭐&nbsp;Anybody with basic HTML skills can make a PR and is welcomed to do so ! Tagging text is boring but very useful&nbsp;💫*</p>
+*<p align="center">⭐&nbsp;Anybody with basic HTML skills can make a PR and is welcomed to do so ! Tagging text is boring but very useful&nbsp;💫</p>*
 
 ## Project
 
