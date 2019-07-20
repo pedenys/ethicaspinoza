@@ -1,8 +1,6 @@
-⭐&nbsp;Anybody with basic HTML skills can make a PR and is welcomed to do so !&nbsp;⭐
+**Spinoza's Ethics for the current century made with plain HTML, CSS and JS.**
 
-(Tagging is boring but very useful)
-
-Spinoza's Ethics for the current century made with plain HTML, CSS and JS.
+**⭐&nbsp;Anybody with basic HTML skills can tag text & make a PR !&nbsp;⭐**
 
 ## Project
 
