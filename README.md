@@ -1,9 +1,7 @@
-# EthicaSpinoza
+> Spinoza's Ethics for the current century made with plain HTML, CSS and JS.
 
-Spinoza's Ethics for the current century made with plain HTML, CSS and JS.
-
-<p align="center"><b>⭐&nbsp;Anybody with basic HTML skills can make a PR and is welcomed to do so !&nbsp;⭐</b></p>
-<p align="center"><b>✨&nbsp;Tagging text is boring but very useful&nbsp;✨</b></p>
+**⭐&nbsp;Anybody with basic HTML skills can make a PR and is welcomed to do so !&nbsp;⭐**
+**✨&nbsp;Tagging text is boring but very useful&nbsp;✨**
 
 ## Project
 
@@ -32,6 +30,11 @@ For a demonstration, which is always relative to a 'parent' item, himself relati
 <div class="lemma" id="partII-axioma-inter-corpus-1-lemma-1">{children}</div>
 ```
 
+## Folders
+
+Website files are under `./www`.
+Source files (`.txt`) are under `./source` with a specific folder for supported languages.
+Design files (for icons for instance) and other relatively small other aspects of the project currently in stand-by (ebook) are under `./other`.
 
 ### Todo
 
