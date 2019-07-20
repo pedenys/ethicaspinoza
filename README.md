@@ -1,6 +1,6 @@
 # EthicaSpinoza
 
-Spinoza's Ethics for the current century made with plain HTML, CSS and JS.
+Spinoza's Ethics for the current century made with plain `HTML`, `CSS` and `JS`.
 
 ⭐&nbsp; with basic HTML skills can tag text & make a PR !&nbsp;⭐
 
