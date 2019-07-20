@@ -1,6 +1,5 @@
 # EthicaSpinoza
 
-------
 
 Spinoza's Ethics for the current century made with plain HTML, CSS and JS.
 
