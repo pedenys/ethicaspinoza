@@ -3,7 +3,7 @@
 
 This is just HTML, CSS and JavaScript with Jquery. 
 
-⚠️&nbsp;Anybody with basic HTML skills can make a PR and is welcomed to do so ! Tagging text is boring but very useful&nbsp;✨💫✨&nbsp;⚠️ 
+**⚠️&nbsp;Anybody with basic HTML skills can make a PR and is welcomed to do so ! Tagging text is boring but very useful&nbsp;💫**
 
 ## Project
 
