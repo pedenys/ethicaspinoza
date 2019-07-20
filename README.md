@@ -1,6 +1,6 @@
 # EthicaSpinoza
 
-Spinoza's Ethics for the current century made with plain `HTML`, `CSS` and `JS`.
+[Spinoza's Ethics](https://ethicaspinoza.netlify.com/) for the current century made with plain `HTML`, `CSS` and `JS`.
 
 ⭐&nbsp; with basic HTML skills can tag text & make a PR !&nbsp;⭐
 
@@ -36,6 +36,9 @@ Source files (`.txt`) are under `./source` with a specific folder for supported 
 Design files (for icons for instance) and other relatively small other aspects of the project currently in stand-by (ebook) are under `./other`.
 
 ### Todo
+**Fix**
+
+- [ ] Ghost windows on launching
 
 **Tagging**
 
