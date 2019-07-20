@@ -1,6 +1,6 @@
 **Spinoza's Ethics for the current century made with plain HTML, CSS and JS.**
 
-**⭐&nbsp;Anybody with basic HTML skills can tag text & make a PR !&nbsp;⭐**
+_**⭐&nbsp;Anybody with basic HTML skills can tag text & make a PR !&nbsp;⭐**_
 
 ## Project
 
