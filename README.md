@@ -56,5 +56,7 @@ Design files (for icons for instance) and other relatively small other aspects o
 
 ### Roadmap
 
-- [ ] Mobile App (React Native)
+- [ ] Better UX
+- [ ] PWA
+- [ ] NextJS
 - [ ] Epub version
