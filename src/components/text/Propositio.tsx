@@ -13,14 +13,14 @@ const PropositioText = styled.h2`
   color: #333;
 `
 interface PropositioProps {
-  id: number
-  pars: number
+  id: string
+  pars: string
   txt: string
 }
 
 const Propositio: React.FC<PropositioProps> = ({ id, pars, txt }) => {
   return (
-    <div id={`pars${pars.toString()}-propositio${id}`}>
+    <div id={`pars${pars}-propositio${id}`}>
       <PropositioTitle>Proposition {id}</PropositioTitle>
       <PropositioText>{txt}</PropositioText>
       <style jsx>{`

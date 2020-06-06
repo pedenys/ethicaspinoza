@@ -1,7 +1,9 @@
 import React from "react"
-import json from "../../source/FR/misrahi/parsiii.json"
+import json from "../../source/FR/appuhn/parsiii.json"
 import Propositio from "../components/text/Propositio"
 import Demonstratio from "../components/text/Demonstratio"
+import Appendix from "../components/text/Appendix"
+import Praefatio from "../components/text/Praefatio"
 
 const ParsIII = () => {
   const getDemonstratioArray = (i: number) => {
@@ -15,18 +17,22 @@ const ParsIII = () => {
 
   return (
     <div>
-      {Array.from({ length: 73 }).map((item, index) => (
-        <>
+      <Praefatio txt={json.praefatio} />
+      {/* Propositio */}
+      {Array.from({ length: 73 }).map((item, i) => (
+        <span key={i.toString() + json.propositio[i + 1][0]}>
           <Propositio
-            id={index + 1}
-            pars={3}
-            txt={json.propositio[index + 1]}
+            id={(i + 1).toString()}
+            pars={"3"}
+            txt={json.propositio[i + 1]}
           />
-          {getDemonstratioArray(index + 1).map((txt) => (
-            <Demonstratio txt={txt} />
+          {getDemonstratioArray(i + 1).map((txt, index) => (
+            <Demonstratio txt={txt} key={txt[0] + index.toString()} />
           ))}
-        </>
+        </span>
       ))}
+      {/* Appendix */}
+      <Appendix txt={json.appendix.txt} caputs={json.appendix.caputs} />
     </div>
   )
 }
