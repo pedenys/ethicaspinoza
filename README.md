@@ -1,62 +1,49 @@
 # EthicaSpinoza
 
-[Spinoza's Ethics](https://ethicaspinoza.netlify.com/) for the current century made with plain `HTML`, `CSS` and `JS`.
-
-⭐&nbsp; with basic HTML skills can tag text & make a PR !&nbsp;⭐
+[Spinoza's Ethics](https://ethicaspinoza.netlify.com/) for the current century.
 
 ### Principle
 
 The idea is to let users check what they want or do not want to **read** in Spinoza's masterpiece. Beginners may want to only read scholies while more advanced readers don't want to have demonstrations in the way of their first intensive reading.
 
-Also, researchers may find useful HTML tagging to data-analyse the text.
-
+Also, generated HTML tagging might also be useful.
 
 ### Naming conventions
 
 **Latin words are used for interoperability**.
 
-In order to give to every element its place, HTML tagging is done via classes and ids. Classes just follow the generic identity of the item (scholie, proposition, definition, demonstration,, etc.). Ids are more complex because they are relative to the place of the item in Ethics's architecture. 
+Ethics is made of pars. Multiple components can be identified in every parts which are :
 
-For a demonstration, which is always relative to a 'parent' item, himself relative to a part of Ethics, we'll use :
+- Appendix
+- Axioma
+- Caput
+- Corollarium
+- Demonstratio
+- Lemma
+- Postulatum
+- Praefatio
+- Propositio
+- Scholium
+- Several other singular pieces like Affectuum Definitiones at the end of pars III or Caput in pars IV's Appendix
 
-```html
-<div class="demonstratio" id="partII-proposition-38-demonstration-1">{children}</div>
-```
+The ping-pong game between propositio and demonstratio through out the Ethics really enforces the idea that every atom of the text can and should be uniquely identfied. This identifcation can be made relatively to its place in the pars or to a propositio.
 
-**Note**: sometimes Spinoza uses new generic identities for its item like the axiomas about bodies or relations between bodies in part II. The best way to handle may be to add this identity into the id like this :
-
-```html
-<div class="lemma" id="partII-axioma-inter-corpus-1-lemma-1">{children}</div>
-```
+Appendix and Praefatio are singletons, relative to a specific pars.
+Axioma is multiple, relative to a specific pars.
+Lemma is multiple, relative to a specific pars and can have one or many Demonstratio.
+Propositio is multiple, relative to a specific pars and can have one or many Demonstratio, one or many Scholium, one or many Corollarium.
+Demonstratio, Scholium and Corollarium have an index, they are first demonstratio, second demonstratio and so on. In the latin text, every demonstrio after the first is simply noted Aliter.
+Caput is relative is relative to an Appendix so it is relative to a single pars.
 
 ### Folders
 
-Website files are under `./www`.
-Source files (`.txt`) are under `./source` with a specific folder for supported languages.
-Design files (for icons for instance) and other relatively small other aspects of the project currently in stand-by (ebook) are under `./other`.
+The text is built with React components using Nextjs framework for easy-win SSR.
 
 ### Todo
-**Fix**
 
-- [ ] Ghost windows on launching
+Part IV
 
-**Tagging**
-
-- [ ] part II
-- [ ] part III
-- [ ] part IV
-- [ ] part V
-
-**Linkings between propositions, demonstrations, etc.**
-
-- [ ] part II
-- [ ] part III
-- [ ] part IV
-- [ ] part V
-
-### Roadmap
-
-- [ ] Better UX
-- [ ] PWA
-- [ ] NextJS
-- [ ] Epub version
+- [ ] Create and style components for Appendix, Praefatio, Propositio
+- [ ] Define components' props to uniquely identify them
+- [ ] Populate components
+- [ ] Add Demonstratio
