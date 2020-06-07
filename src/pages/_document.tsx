@@ -33,7 +33,7 @@ export default class MyDocument extends Document<any> {
   render() {
     return (
       <html>
-        <AppHead />
+        <AppHead title="Ethicaspinoza" />
         <body>
           <Main />
           <NextScript />

@@ -1,4 +1,3 @@
-import React from "react"
 interface PraefatioProps {
   txt: string
 }
@@ -6,14 +5,8 @@ interface PraefatioProps {
 const Praefatio: React.FC<PraefatioProps> = ({ txt }) => {
   return (
     <div>
-      <h3>Préface</h3>
+      <h2>Préface</h2>
       <p dangerouslySetInnerHTML={{ __html: txt }}></p>
-      <style jsx>{`
-        p {
-          font-size: 16px;
-          font-weight: 300;
-        }
-      `}</style>
     </div>
   )
 }

@@ -7,7 +7,6 @@ type AppHeadProps = {
 
 const AppHead: React.FC<AppHeadProps> = ({ description, title }) => (
   <Head>
-    {title && <title>{title}</title>}
     <meta charSet="utf-8" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <meta name="theme-color" content="#EFEFEF"></meta>
@@ -21,6 +20,7 @@ const AppHead: React.FC<AppHeadProps> = ({ description, title }) => (
         {description}
       </meta>
     )}
+    {title && <title>{title}</title>}
   </Head>
 )
 

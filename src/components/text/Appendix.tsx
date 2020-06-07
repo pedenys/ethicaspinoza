@@ -1,5 +1,4 @@
-import React from "react"
-import Caput from "./Caput"
+import Caput from "@atoms/Caput"
 
 interface AppendixProps {
   caputs?: Array<{ caputIndex: string; txt: string }>
@@ -22,12 +21,6 @@ const Appendix: React.FC<AppendixProps> = ({ caputs, txt }) => {
           ))}
         </div>
       )}
-      <style jsx>{`
-        h2 {
-          font-weight: 500;
-          font-size: 24px;
-        }
-      `}</style>
     </div>
   )
 }
