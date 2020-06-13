@@ -3,10 +3,11 @@ interface PraefatioProps {
 }
 
 const Praefatio: React.FC<PraefatioProps> = ({ txt }) => {
+  console.log({ txt })
   return (
     <div>
       <h2>Préface</h2>
-      <p dangerouslySetInnerHTML={{ __html: txt }}></p>
+      <div dangerouslySetInnerHTML={{ __html: txt }}></div>
     </div>
   )
 }
