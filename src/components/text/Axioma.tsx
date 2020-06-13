@@ -1,5 +1,9 @@
+import { useContext } from "react"
+import VisibilityContext from "../../context/VisibilityContext"
+
 const Axioma = () => {
-  return <div></div>
+  const { showAxioma } = useContext(VisibilityContext)
+  return showAxioma && <div></div>
 }
 
 export default Axioma

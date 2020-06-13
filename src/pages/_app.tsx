@@ -1,13 +1,16 @@
 import App from "next/app"
 import Layout from "../components/Layout"
+import { VisibilityProvider } from "../context/VisibilityContext"
 
 class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
     return (
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <VisibilityProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </VisibilityProvider>
     )
   }
 }

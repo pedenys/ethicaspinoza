@@ -1,5 +1,9 @@
+import { useContext } from "react"
+import VisibilityContext from "../../context/VisibilityContext"
+
 const Scholium = () => {
-  return <div></div>
+  const { showScholium } = useContext(VisibilityContext)
+  return showScholium && <div></div>
 }
 
 export default Scholium
