@@ -1,10 +1,11 @@
-const withOffline = require('next-offline')
+const withOffline = require("next-offline")
+const withImages = require("next-images")
 
 const nextConfig = {
-   webpack: (config) => {
-      //    do webpack things
-      return config
-   },
+  webpack: (config) => {
+    //    do webpack things
+    return config
+  },
 }
 
-module.exports = withOffline(nextConfig)
+module.exports = withImages(withOffline(nextConfig))

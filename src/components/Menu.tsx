@@ -1,8 +1,10 @@
 import React, { useState } from "react"
-import { useVisibilityContext } from "../context/VisibilityContext"
 import css from "styled-jsx/css"
-import Tick from "./IconTick"
-import Circle from "./IconCircle"
+import {
+  useVisibilityContext,
+  VisibilityContextState,
+} from "../context/VisibilityContext"
+import MenuItemVisibility from "./MenuItemVisibility"
 
 const Menu = () => {
   const {
@@ -18,47 +20,72 @@ const Menu = () => {
     showPraefatio,
     showScholium,
   } = useVisibilityContext()
+
   const [showMenu, toggleMenu] = useState<boolean>(false)
 
+  const handleClickOnToggleVisibility = (
+    field: keyof Omit<VisibilityContextState, "toggleVisiblity">
+  ) => (event) => {
+    event.stopPropagation()
+    toggleVisibility(field)
+  }
+
   return (
-    <div className="menuContainer">
-      <div className="arrow" onClick={() => toggleMenu((prev) => !prev)}>
-        {showMenu ? "-" : "X"}
-      </div>
+    <div className="menuContainer" onClick={() => toggleMenu((prev) => !prev)}>
+      <div className="arrow">{showMenu ? "-" : "X"}</div>
       {showMenu && (
         <div className="innerMenuContainer">
           <ul>
-            <li onClick={() => toggleVisibility("showAppendix")}>
-              {showAppendix ? <Tick /> : <Circle />}
-              &nbsp;Appendix
-            </li>
-            <li onClick={() => toggleVisibility("showAxioma")}>
-              {showAxioma ? <Tick /> : <Circle />}&nbsp;Axioma
-            </li>
-            <li onClick={() => toggleVisibility("showCaput")}>
-              {showCaput ? <Tick /> : <Circle />}&nbsp;Caput
-            </li>
-            <li onClick={() => toggleVisibility("showCorollarium")}>
-              {showCorollarium ? <Tick /> : <Circle />}&nbsp;Corollarium
-            </li>
-            <li onClick={() => toggleVisibility("showDemonstratio")}>
-              {showDemonstratio ? <Tick /> : <Circle />}&nbsp;Demonstratio
-            </li>
-            <li onClick={() => toggleVisibility("showLemma")}>
-              {showLemma ? <Tick /> : <Circle />}&nbsp;Lemma
-            </li>
-            <li onClick={() => toggleVisibility("showPropositio")}>
-              {showPropositio ? <Tick /> : <Circle />}&nbsp;Propositio
-            </li>
-            <li onClick={() => toggleVisibility("showPostulatum")}>
-              {showPostulatum ? <Tick /> : <Circle />}&nbsp;Postulatum
-            </li>
-            <li onClick={() => toggleVisibility("showPraefatio")}>
-              {showPraefatio ? <Tick /> : <Circle />}&nbsp;Praefatio
-            </li>
-            <li onClick={() => toggleVisibility("showScholium")}>
-              {showScholium ? <Tick /> : <Circle />}&nbsp;Scholium
-            </li>
+            <MenuItemVisibility
+              onClick={handleClickOnToggleVisibility("showAppendix")}
+              selected={showAppendix}
+              label="Appendix"
+            />
+            <MenuItemVisibility
+              onClick={handleClickOnToggleVisibility("showAxioma")}
+              selected={showAxioma}
+              label="Axioma"
+            />
+            <MenuItemVisibility
+              onClick={handleClickOnToggleVisibility("showCaput")}
+              selected={showCaput}
+              label="Caput"
+            />
+            <MenuItemVisibility
+              onClick={handleClickOnToggleVisibility("showCorollarium")}
+              selected={showCorollarium}
+              label="Corollarium"
+            />
+            <MenuItemVisibility
+              onClick={handleClickOnToggleVisibility("showDemonstratio")}
+              selected={showDemonstratio}
+              label="Demonstratio"
+            />
+            <MenuItemVisibility
+              onClick={handleClickOnToggleVisibility("showLemma")}
+              selected={showLemma}
+              label="Lemma"
+            />
+            <MenuItemVisibility
+              onClick={handleClickOnToggleVisibility("showPropositio")}
+              selected={showPropositio}
+              label="Propositio"
+            />
+            <MenuItemVisibility
+              onClick={handleClickOnToggleVisibility("showPostulatum")}
+              selected={showPostulatum}
+              label="Postulatum"
+            />
+            <MenuItemVisibility
+              onClick={handleClickOnToggleVisibility("showPraefatio")}
+              selected={showPraefatio}
+              label="Praefatio"
+            />
+            <MenuItemVisibility
+              onClick={handleClickOnToggleVisibility("showScholium")}
+              selected={showScholium}
+              label="Scholium"
+            />
           </ul>
         </div>
       )}
@@ -68,8 +95,6 @@ const Menu = () => {
 }
 
 const menuStyles = css`
-  .menuContainer {
-  }
   .arrow {
     position: fixed;
     top: 0;
@@ -98,12 +123,6 @@ const menuStyles = css`
   }
   ul {
     list-style: none;
-  }
-  li {
-    font-size: 6rem;
-  }
-  li svg {
-    border: 1px solid hotpink;
   }
 `
 

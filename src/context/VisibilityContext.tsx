@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-interface VisibilityContextState {
+export interface VisibilityContextState {
   showAppendix: boolean
   showAxioma: boolean
   showCaput: boolean
@@ -41,7 +41,6 @@ export const VisibilityProvider: React.FC<{}> = ({ children }) => {
   const toggleVisibility = (
     field: keyof Omit<VisibilityContextState, "toggleVisiblity">
   ) => {
-    console.log({ field })
     updateVisibilityState(
       (prevState: Omit<VisibilityContextState, "toggleVisibility">) => ({
         ...prevState,
