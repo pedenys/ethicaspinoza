@@ -5,6 +5,9 @@ import {
   VisibilityContextState,
 } from "../context/VisibilityContext"
 import MenuItemVisibility from "./MenuItemVisibility"
+import CloseMenuIcon from "./icons/Close.icon"
+import OpenMenuIcon from "./icons/Menu.icon"
+import { colors } from "../styling/ds"
 
 const Menu = () => {
   const {
@@ -32,9 +35,12 @@ const Menu = () => {
 
   return (
     <div className="menuContainer" onClick={() => toggleMenu((prev) => !prev)}>
-      <div className="arrow">{showMenu ? "-" : "X"}</div>
+      <div className="arrow">
+        {showMenu ? <CloseMenuIcon /> : <OpenMenuIcon />}
+      </div>
       {showMenu && (
         <div className="innerMenuContainer">
+          <h2>Filtres</h2>
           <ul>
             <MenuItemVisibility
               onClick={handleClickOnToggleVisibility("showAppendix")}
@@ -95,34 +101,38 @@ const Menu = () => {
 }
 
 const menuStyles = css`
+  .menuContainer {
+  }
   .arrow {
     position: fixed;
     top: 0;
-    right: 4rem;
-    font-size: 10rem;
+    right: 3rem;
+    font-size: 7rem;
     z-index: 2;
   }
   .innerMenuContainer {
-    background-color: royalblue;
-    opacity: 0.8;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    overflow-y: hidden;
+    min-height: 100vh;
   }
   h2 {
     font-size: 10rem;
+    margin: 2rem 0 1rem 0;
+    line-height: 1;
+    text-align: center;
   }
   ul {
+    margin: 0;
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    justify-items: center;
+    align-content: center;
+    margin: 0 auto;
   }
 `
 

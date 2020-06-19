@@ -1,7 +1,7 @@
 import React from "react"
 import { colors } from "../styling/ds"
-import Tick from "./IconTick"
-import Circle from "./IconCircle"
+import Checked from "./icons/RadioButtonChecked.icon"
+import Unchecked from "./icons/RadioButtonUnchecked.icon"
 import css from "styled-jsx/css"
 
 interface MenuItemVisibilityProps {
@@ -25,7 +25,7 @@ const MenuItemVisibility: React.FC<MenuItemVisibilityProps> = ({
             : { backgroundColor: "inherit" }
         }
       >
-        {selected ? <Tick /> : <Circle />}
+        {selected ? <Checked /> : <Unchecked />}
         &nbsp;{label}
       </li>
       <style jsx>{menuItemVisibilityStyles}</style>
@@ -35,7 +35,15 @@ const MenuItemVisibility: React.FC<MenuItemVisibilityProps> = ({
 
 const menuItemVisibilityStyles = css`
   li {
-    margin: 1rem 0;
+    margin: 1rem;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    display: inline-block;
+  }
+  svg {
+    padding-top: 10px;
   }
   @media (orientation: landscape) {
     li {
