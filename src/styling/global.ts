@@ -19,22 +19,26 @@ export default css.global`
   h1 {
     color: #111;
     font-weight: 800;
-    font-size: 3.2rem;
+    font-size: 5rem;
+    margin: 0 0 2rem 0;
   }
   h2 {
     color: #111;
     font-weight: 600;
-    font-size: 2.6rem;
+    font-size: 4rem;
+    margin: 0 0 2rem 0;
   }
   h3 {
     color: #222;
     font-weight: 500;
-    font-size: 1.8rem;
+    font-size: 3rem;
+    margin: 0 0 2rem 0;
   }
   h4 {
     color: #222;
     font-weight: 500;
-    font-size: 1.6rem;
+    font-size: 2rem;
+    margin: 0 0 2rem 0;
   }
   p {
     font-weight: 300;

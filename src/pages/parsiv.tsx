@@ -1,11 +1,12 @@
 import React from "react"
-import json from "../../source/FR/appuhn/parsiii.json"
+import json from "../../source/FR/appuhn/parsiv.json"
 import Propositio from "../components/text/Propositio"
 import Demonstratio from "../components/text/Demonstratio"
 import Appendix from "../components/text/Appendix"
 import Praefatio from "../components/text/Praefatio"
+import css from "styled-jsx/css"
 
-const ParsIII = () => {
+const ParsIv = () => {
   const getDemonstratioArray = (i: number) => {
     return json.demonstratio.reduce<Array<string>>((arrayOfTxt, dem) => {
       if (dem.propositioId === i.toString()) {
@@ -16,11 +17,15 @@ const ParsIII = () => {
   }
 
   return (
-    <div>
+    <>
+      <h1>Partie IV</h1>
       <Praefatio txt={json.praefatio} />
       {/* Propositio */}
-      {Array.from({ length: 73 }).map((item, i) => (
-        <span key={i.toString() + json.propositio[i + 1][0]}>
+      {Array.from({ length: 73 }, (_, i) => (
+        <div
+          className="propositioContainer"
+          key={i.toString() + json.propositio[i + 1][0]}
+        >
           <Propositio
             id={(i + 1).toString()}
             pars={"3"}
@@ -29,12 +34,19 @@ const ParsIII = () => {
           {getDemonstratioArray(i + 1).map((txt, index) => (
             <Demonstratio txt={txt} key={txt[0] + index.toString()} />
           ))}
-        </span>
+        </div>
       ))}
       {/* Appendix */}
       <Appendix txt={json.appendix.txt} caputs={json.appendix.caputs} />
-    </div>
+      <style jsx>{parsIiiStyle}</style>
+    </>
   )
 }
 
-export default ParsIII
+const parsIiiStyle = css`
+  .propositioContainer {
+    margin-bottom: 5rem;
+  }
+`
+
+export default ParsIv
