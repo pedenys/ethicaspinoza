@@ -1,13 +1,23 @@
-import { useContext } from "react"
+import React, { useContext } from "react"
 import VisibilityContext from "../../context/VisibilityContext"
 
-const Demonstratio = ({ txt }) => {
+interface DemonstratioInterface {
+  index: number
+  pars: string
+  txt: string
+}
+
+const Demonstratio: React.FC<DemonstratioInterface> = ({
+  index,
+  pars,
+  txt,
+}) => {
   const { showDemonstratio } = useContext(VisibilityContext)
   return (
     showDemonstratio && (
-      <div>
-        <h3>Démonstration</h3>
-        <p>{txt}</p>
+      <div id={`pars${pars}-demonstratio${index}`}>
+        <h3>Démonstration {index + 1}</h3>
+        <p dangerouslySetInnerHTML={{ __html: txt }} />
       </div>
     )
   )

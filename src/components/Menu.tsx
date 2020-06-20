@@ -16,6 +16,7 @@ const Menu = () => {
     showAxioma,
     showCaput,
     showCorollarium,
+    showDefinitio,
     showDemonstratio,
     showLemma,
     showPropositio,
@@ -61,6 +62,11 @@ const Menu = () => {
               onClick={handleClickOnToggleVisibility("showCorollarium")}
               selected={showCorollarium}
               label="Corollarium"
+            />
+            <MenuItemVisibility
+              onClick={handleClickOnToggleVisibility("showDefinitio")}
+              selected={showDefinitio}
+              label="Definitio"
             />
             <MenuItemVisibility
               onClick={handleClickOnToggleVisibility("showDemonstratio")}
@@ -117,6 +123,8 @@ const menuStyles = css`
     left: 0;
     bottom: 0;
     min-height: 100vh;
+    background-color: lightyellow;
+    opacity: 0.9;
   }
   h2 {
     font-size: 10rem;

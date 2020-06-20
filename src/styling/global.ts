@@ -1,4 +1,5 @@
 import css from "styled-jsx/css"
+import { colors } from "./ds"
 
 export default css.global`
   html {
@@ -44,6 +45,16 @@ export default css.global`
     font-weight: 300;
     font-size: 1.6rem;
     margin-bottom: 1rem;
+  }
+  .propositioContainer {
+    margin-bottom: 5rem;
+  }
+  .propositioContainer::after {
+    display: block;
+    content: "";
+    height: 10px;
+    width: 100px;
+    background-color: ${colors.orange};
   }
   @media screen and (min-width: 768px) {
     .globalContainer {

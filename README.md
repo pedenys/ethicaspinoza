@@ -43,7 +43,17 @@ The text is built with React components using Nextjs framework for easy-win SSR.
 
 Part IV
 
-- [ ] Create and style components for Appendix, Praefatio, Propositio
-- [ ] Define components' props to uniquely identify them
-- [ ] Populate components
-- [ ] Add Demonstratio
+- [x] Create components for Appendix, Praefatio, Propositio and so on
+- [x] Define components' props to uniquely identify them
+- [x] Populate components
+- [x] Create json for each pars
+- [x] Create page for each pars
+- [x] Create menu
+- [x] Create toggle visibility menu
+- [ ] Build pars II weird architecture
+- [ ] Refacto pars prop with pars constant
+- [ ] Style Appendix, Praefatio, Propositio and so on (margins, font-size, colors, dividers if needed)
+- [ ] Find inspiration for overall design
+- [ ] Fix menu display (overflow-y is broken as css position is `fixed`)
+- [ ] Add Demonstratio to each propositio in every pars
+- [ ] Create MDX part for explanations

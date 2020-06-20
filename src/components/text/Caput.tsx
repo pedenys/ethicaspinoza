@@ -1,18 +1,19 @@
 import { useContext } from "react"
 import VisibilityContext from "../../context/VisibilityContext"
 
-interface CaputProps {
+export interface CaputProps {
+  index: number
+  pars: string
   txt: string
-  index: string
 }
 
-const Caput: React.FC<CaputProps> = ({ index, txt }) => {
+const Caput: React.FC<CaputProps> = ({ index, pars, txt }) => {
   const { showCaput } = useContext(VisibilityContext)
   return (
     showCaput && (
-      <div>
-        <h3>Chapitre {index}</h3>
-        <p>{txt}</p>
+      <div id={`pars${pars}-caput${index}`}>
+        <h3>Chapitre {index + 1}</h3>
+        <p dangerouslySetInnerHTML={{ __html: txt }} />
       </div>
     )
   )

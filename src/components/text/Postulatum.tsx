@@ -1,9 +1,22 @@
-import { useContext } from "react"
+import React, { useContext } from "react"
 import VisibilityContext from "../../context/VisibilityContext"
 
-const Postulatum = () => {
+interface PostulatumInterface {
+  index: number
+  pars: string
+  txt: string
+}
+
+const Postulatum: React.FC<PostulatumInterface> = ({ index, pars, txt }) => {
   const { showPostulatum } = useContext(VisibilityContext)
-  return showPostulatum && <div></div>
+  return (
+    showPostulatum && (
+      <div id={`pars${pars}-postulatum${index}`}>
+        <h3>Postulat {index + 1}</h3>
+        <p dangerouslySetInnerHTML={{ __html: txt }} />
+      </div>
+    )
+  )
 }
 
 export default Postulatum

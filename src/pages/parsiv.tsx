@@ -1,52 +1,57 @@
 import React from "react"
 import json from "../../source/FR/appuhn/parsiv.json"
-import Propositio from "../components/text/Propositio"
-import Demonstratio from "../components/text/Demonstratio"
 import Appendix from "../components/text/Appendix"
+import Demonstratio from "../components/text/Demonstratio"
 import Praefatio from "../components/text/Praefatio"
-import css from "styled-jsx/css"
+import Propositio from "../components/text/Propositio"
+import { getDemonstratioArray } from "../helpers"
+import Definitio from "../components/text/Definitio"
+import Axioma from "../components/text/Axioma"
 
 const ParsIv = () => {
-  const getDemonstratioArray = (i: number) => {
-    return json.demonstratio.reduce<Array<string>>((arrayOfTxt, dem) => {
-      if (dem.propositioId === i.toString()) {
-        arrayOfTxt.push(dem.txt)
-      }
-      return arrayOfTxt
-    }, [])
-  }
-
   return (
     <>
       <h1>Partie IV</h1>
-      <Praefatio txt={json.praefatio} />
+
+      {/* Praefatio */}
+      <Praefatio pars="4" txt={json.praefatio} />
+
+      {/* Definitio */}
+      {Array.from({ length: 8 }, (_, i) => (
+        <Definitio index={i + 1} pars="4" txt={json.definitio[i + 1]} />
+      ))}
+
+      {/* Axioma */}
+      {Array.from({ length: 1 }, (_, i) => (
+        <Axioma index={i + 1} pars="4" txt={json.axioma[i + 1]} />
+      ))}
+
       {/* Propositio */}
       {Array.from({ length: 73 }, (_, i) => (
         <div
           className="propositioContainer"
           key={i.toString() + json.propositio[i + 1][0]}
         >
-          <Propositio
-            id={(i + 1).toString()}
-            pars={"3"}
-            txt={json.propositio[i + 1]}
-          />
-          {getDemonstratioArray(i + 1).map((txt, index) => (
-            <Demonstratio txt={txt} key={txt[0] + index.toString()} />
+          <Propositio index={i + 1} pars={"4"} txt={json.propositio[i + 1]} />
+          {getDemonstratioArray(json.demonstratio, i + 1).map((txt, index) => (
+            <Demonstratio
+              index={i + 1}
+              pars="4"
+              txt={txt}
+              key={txt[0] + index.toString()}
+            />
           ))}
         </div>
       ))}
+
       {/* Appendix */}
-      <Appendix txt={json.appendix.txt} caputs={json.appendix.caputs} />
-      <style jsx>{parsIiiStyle}</style>
+      <Appendix
+        pars="4"
+        txt={json.appendix.txt}
+        caputs={json.appendix.caputs}
+      />
     </>
   )
 }
-
-const parsIiiStyle = css`
-  .propositioContainer {
-    margin-bottom: 5rem;
-  }
-`
 
 export default ParsIv

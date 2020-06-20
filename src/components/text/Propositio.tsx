@@ -1,19 +1,19 @@
-import { useContext } from "react"
+import React, { useContext } from "react"
 import VisibilityContext from "../../context/VisibilityContext"
 
-interface PropositioProps {
-  id: string
+interface PropositioInterface {
+  index: number
   pars: string
   txt: string
 }
 
-const Propositio: React.FC<PropositioProps> = ({ id, pars, txt }) => {
+const Propositio: React.FC<PropositioInterface> = ({ index, pars, txt }) => {
   const { showPropositio } = useContext(VisibilityContext)
   return (
     showPropositio && (
-      <div id={`pars${pars}-propositio${id}`}>
-        <h3>Proposition {id}</h3>
-        <p>{txt}</p>
+      <div id={`pars${pars}-propositio${index}`}>
+        <h3>Proposition {index + 1}</h3>
+        <p dangerouslySetInnerHTML={{ __html: txt }} />
       </div>
     )
   )

@@ -6,6 +6,7 @@ export interface VisibilityContextState {
   showCaput: boolean
   showCorollarium: boolean
   showDemonstratio: boolean
+  showDefinitio: boolean
   showLemma: boolean
   showPropositio: boolean
   showPostulatum: boolean
@@ -21,6 +22,7 @@ const defaultVisibilityContextState = {
   showAxioma: true,
   showCaput: true,
   showCorollarium: true,
+  showDefinitio: true,
   showDemonstratio: true,
   showLemma: true,
   showPropositio: true,
