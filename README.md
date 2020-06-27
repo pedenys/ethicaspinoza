@@ -41,8 +41,6 @@ The text is built with React components using Nextjs framework for easy-win SSR.
 
 ### Todo
 
-Part IV
-
 - [x] Create components for Appendix, Praefatio, Propositio and so on
 - [x] Define components' props to uniquely identify them
 - [x] Populate components
