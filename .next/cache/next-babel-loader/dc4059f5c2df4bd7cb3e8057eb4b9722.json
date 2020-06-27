@@ -1,0 +1,1 @@
+{"ast":null,"code":"const AppTheme = {\n  colors: {\n    //   add colors\n    blue: \"#00007D\"\n  }\n};\nexport default AppTheme;","map":null,"metadata":{},"sourceType":"module"}
