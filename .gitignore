@@ -2,3 +2,5 @@
 .next
 node_modules
 commit.md
+public/build
+.vscode
