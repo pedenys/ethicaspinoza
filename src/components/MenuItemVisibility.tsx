@@ -17,16 +17,20 @@ const MenuItemVisibility: React.FC<MenuItemVisibilityProps> = ({
 }) => {
   return (
     <>
-      <li
-        onClick={onClick}
-        style={
-          selected
-            ? { backgroundColor: colors.orange }
-            : { backgroundColor: "inherit" }
-        }
-      >
+      <li onClick={onClick}>
         {selected ? <Checked /> : <Unchecked />}
-        &nbsp;{label}
+        &nbsp;
+        <span
+          style={
+            selected
+              ? null
+              : {
+                  textDecoration: "line-through",
+                }
+          }
+        >
+          {label}
+        </span>
       </li>
       <style jsx>{menuItemVisibilityStyles}</style>
     </>
@@ -35,12 +39,13 @@ const MenuItemVisibility: React.FC<MenuItemVisibilityProps> = ({
 
 const menuItemVisibilityStyles = css`
   li {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     margin: 1rem;
     padding: 0 1rem;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    display: inline-block;
+    width: 100%;
   }
   svg {
     padding-top: 10px;

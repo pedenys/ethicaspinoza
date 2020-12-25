@@ -57,8 +57,16 @@ export default css.global`
     line-height: 1.5;
   }
 
+  [id*="pars"] {
+    margin-bottom: 1rem;
+  }
+
   .propositioContainer {
     margin-bottom: 1rem;
+  }
+
+  .last-item {
+    margin-bottom: 5rem;
   }
 
   .textContainer {
@@ -68,11 +76,11 @@ export default css.global`
   [id*="caput"]::after,
   [id*="definitio"]::after,
   [id*="propositio"]::after {
+    background-color: #333;
     display: block;
     content: "";
     height: 2px;
     width: 72px;
-    background-color: #333;
   }
 
   [id*="axioma"]::after {

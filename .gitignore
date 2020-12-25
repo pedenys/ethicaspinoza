@@ -2,3 +2,4 @@
 .next
 node_modules
 commit.md
+.DS_Store

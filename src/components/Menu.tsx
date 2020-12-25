@@ -4,10 +4,9 @@ import {
   useVisibilityContext,
   VisibilityContextState,
 } from "../context/VisibilityContext"
-import MenuItemVisibility from "./MenuItemVisibility"
+import CauteIcon from "./icons/Caute.icon"
 import CloseMenuIcon from "./icons/Close.icon"
-import OpenMenuIcon from "./icons/Menu.icon"
-import { colors } from "../styling/ds"
+import MenuItemVisibility from "./MenuItemVisibility"
 
 const Menu = () => {
   const {
@@ -36,12 +35,12 @@ const Menu = () => {
 
   return (
     <div className="menuContainer" onClick={() => toggleMenu((prev) => !prev)}>
-      <div className="arrow">
-        {showMenu ? <CloseMenuIcon /> : <OpenMenuIcon />}
+      <div className="menu_icon">
+        {showMenu ? <CloseMenuIcon /> : <img src="assets/caute.png" />}
       </div>
       {showMenu && (
         <div className="innerMenuContainer">
-          <h2>Filtres</h2>
+          <h4>Filtres</h4>
           <ul>
             <MenuItemVisibility
               onClick={handleClickOnToggleVisibility("showAppendix")}
@@ -109,38 +108,30 @@ const Menu = () => {
 const menuStyles = css`
   .menuContainer {
   }
-  .arrow {
+  .menu_icon {
+    cursor: pointer;
+    height: auto;
     position: fixed;
-    top: 0;
-    right: 3rem;
-    font-size: 7rem;
+    right: 15px;
+    top: 20px;
     z-index: 2;
   }
-  .innerMenuContainer {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    min-height: 100vh;
-    background-color: lightyellow;
-    opacity: 0.9;
+  img {
+    height: 55px;
+    width: 52px;
   }
-  h2 {
-    font-size: 10rem;
-    margin: 2rem 0 1rem 0;
-    line-height: 1;
-    text-align: center;
+  .innerMenuContainer {
+    background-color: lightyellow;
+    bottom: 0;
+    left: 0;
+    padding: 4rem;
+    min-height: 100vh;
+    opacity: 0.97;
+    position: fixed;
+    right: 0;
+    top: 0;
   }
   ul {
-    margin: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    justify-items: center;
-    align-content: center;
-    margin: 0 auto;
   }
 `
 
