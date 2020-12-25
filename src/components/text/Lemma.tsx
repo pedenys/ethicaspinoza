@@ -12,7 +12,7 @@ const Lemma: React.FC<LemmaInterface> = ({ index, pars, txt }) => {
   return (
     showLemma && (
       <div id={`pars${pars}-lemma${index}`}>
-        <h3>Lemme {index + 1}</h3>
+        <h2>lemme·{index + 1}</h2>
         <p dangerouslySetInnerHTML={{ __html: txt }} />
       </div>
     )

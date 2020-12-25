@@ -12,7 +12,7 @@ const Scholium: React.FC<ScholiumInterface> = ({ index, pars, txt }) => {
   return (
     showScholium && (
       <div id={`pars${pars}-scholium${index}`}>
-        <h3>Scholie {index + 1}</h3>
+        <h2>scholie·{index + 1}</h2>
         <p dangerouslySetInnerHTML={{ __html: txt }} />
       </div>
     )

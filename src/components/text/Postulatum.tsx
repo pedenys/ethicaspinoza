@@ -12,7 +12,7 @@ const Postulatum: React.FC<PostulatumInterface> = ({ index, pars, txt }) => {
   return (
     showPostulatum && (
       <div id={`pars${pars}-postulatum${index}`}>
-        <h3>Postulat {index + 1}</h3>
+        <h2>postulat·{index + 1}</h2>
         <p dangerouslySetInnerHTML={{ __html: txt }} />
       </div>
     )

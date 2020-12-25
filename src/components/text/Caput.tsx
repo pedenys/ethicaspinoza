@@ -12,7 +12,7 @@ const Caput: React.FC<CaputProps> = ({ index, pars, txt }) => {
   return (
     showCaput && (
       <div id={`pars${pars}-caput${index}`}>
-        <h3>Chapitre {index + 1}</h3>
+        <h2>chapitre·{index + 1}</h2>
         <p dangerouslySetInnerHTML={{ __html: txt }} />
       </div>
     )

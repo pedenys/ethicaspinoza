@@ -15,8 +15,8 @@ const Demonstratio: React.FC<DemonstratioInterface> = ({
   const { showDemonstratio } = useContext(VisibilityContext)
   return (
     showDemonstratio && (
-      <div id={`pars${pars}-demonstratio${index}`}>
-        <h3>Démonstration {index + 1}</h3>
+      <div id={`pars${pars}-demonstratio-${index + 1}`}>
+        <h2>démonstration·{index + 1}</h2>
         <p dangerouslySetInnerHTML={{ __html: txt }} />
       </div>
     )

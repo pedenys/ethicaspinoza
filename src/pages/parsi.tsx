@@ -13,7 +13,7 @@ const ParsI: React.FC = () => {
 
       {/* Definitio */}
       {Array.from({ length: 8 }, (_, i) => (
-        <Definitio index={i + 1} pars={pars} txt={json.axioma[i + 1]} />
+        <Definitio index={i} pars={pars} txt={json.definitio[i + 1]} />
       ))}
 
       {/* Axioma */}
@@ -27,7 +27,7 @@ const ParsI: React.FC = () => {
           className="propositioContainer"
           key={i.toString() + json.propositio[i + 1][0]}
         >
-          <Propositio index={i + 1} pars={pars} txt={json.propositio[i + 1]} />
+          <Propositio index={i} pars={pars} txt={json.propositio[i + 1]} />
           {/* 
             getDemonstratioArray(json.demonstratio, i + 1).map((txt, index) => (
               <Demonstratio txt={txt} key={txt[0] + index.toString()} />

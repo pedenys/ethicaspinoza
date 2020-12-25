@@ -12,7 +12,7 @@ const Corollarium: React.FC<CorollariumProps> = ({ index, pars, txt }) => {
   return (
     showCorollarium && (
       <div id={`pars${pars}-corollarium${index}`}>
-        <h3>Corollaire ${index + 1}</h3>
+        <h2>corollaire·${index + 1}</h2>
         <p dangerouslySetInnerHTML={{ __html: txt }} />
       </div>
     )

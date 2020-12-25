@@ -47,7 +47,7 @@ const ParsIii = () => {
           txt={json.affectuumDefinitiones.definitio[i + 1]}
         />
       ))}
-      <h3>Définition générale des affects</h3>
+      <h2>Définition générale des affects</h2>
       <Definitio
         type="affectuumGeneralisDefinitio"
         index={1}

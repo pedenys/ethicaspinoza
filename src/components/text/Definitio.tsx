@@ -25,11 +25,16 @@ const Definitio: React.FC<DefinitioInterface> = ({
             ? `pars${pars}-definitioAffectuumDefinitio${index}`
             : `pars${pars}-definitio${index}`
         }
+        className="textContainer"
       >
         {type !== "affectuumGeneralisDefinitio" && (
-          <h3>Définition {index + 1}</h3>
+          <h2>définition·{index + 1}</h2>
         )}
-        <p dangerouslySetInnerHTML={{ __html: txt }} />
+        {txt.includes("<p>") ? (
+          <div dangerouslySetInnerHTML={{ __html: txt }} />
+        ) : (
+          <p dangerouslySetInnerHTML={{ __html: txt }} />
+        )}
       </div>
     )
   )

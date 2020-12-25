@@ -12,7 +12,7 @@ const Propositio: React.FC<PropositioInterface> = ({ index, pars, txt }) => {
   return (
     showPropositio && (
       <div id={`pars${pars}-propositio${index}`}>
-        <h3>Proposition {index + 1}</h3>
+        <h2>proposition·{index + 1}</h2>
         <p dangerouslySetInnerHTML={{ __html: txt }} />
       </div>
     )

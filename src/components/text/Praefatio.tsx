@@ -11,7 +11,7 @@ const Praefatio: React.FC<PraefatioInterface> = ({ pars, txt }) => {
   return (
     showPraefatio && (
       <div id={`pars${pars}-praefatio`}>
-        <h2>Préface</h2>
+        <h2>préface</h2>
         <p dangerouslySetInnerHTML={{ __html: txt }} />
       </div>
     )

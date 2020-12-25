@@ -12,7 +12,7 @@ const Axioma: React.FC<AxiomaInterface> = ({ index, pars, txt }) => {
   return (
     showAxioma && (
       <div id={`pars${pars}-axioma${index}`}>
-        <h3>Axiome {index}</h3>
+        <h2>axiome·{index}</h2>
         <p dangerouslySetInnerHTML={{ __html: txt }} />
       </div>
     )
