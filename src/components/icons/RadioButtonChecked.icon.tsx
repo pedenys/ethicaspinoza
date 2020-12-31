@@ -1,4 +1,4 @@
-function SvgRadioButtonChecked(props) {
+function RadioButtonCheckedIcon(props) {
   return (
     <svg height="1em" viewBox="0 0 24 24" width="1em" {...props}>
       <path d="M0 0h24v24H0z" fill="none" />
@@ -7,4 +7,4 @@ function SvgRadioButtonChecked(props) {
   )
 }
 
-export default SvgRadioButtonChecked
+export default RadioButtonCheckedIcon

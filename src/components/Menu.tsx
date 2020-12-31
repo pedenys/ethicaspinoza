@@ -4,8 +4,10 @@ import {
   useVisibilityContext,
   VisibilityContextState,
 } from "../context/VisibilityContext"
-import CauteIcon from "./icons/Caute.icon"
 import CloseMenuIcon from "./icons/Close.icon"
+import MenuIcon from "./icons/Menu.icon"
+import MoonIcon from "./icons/Moon.icon"
+import SunIcon from "./icons/Sun.icon"
 import MenuItemVisibility from "./MenuItemVisibility"
 
 const Menu = () => {
@@ -25,6 +27,7 @@ const Menu = () => {
   } = useVisibilityContext()
 
   const [showMenu, toggleMenu] = useState<boolean>(false)
+  const [isDarkTheme, setIsDarkTheme] = useState(false)
 
   const handleClickOnToggleVisibility = (
     field: keyof Omit<VisibilityContextState, "toggleVisiblity">
@@ -33,88 +36,112 @@ const Menu = () => {
     toggleVisibility(field)
   }
 
+  function switchTheme() {
+    const currentTheme = document.documentElement.dataset.theme
+    console.log({ currentTheme })
+
+    if (currentTheme === "dark") {
+      document.documentElement.dataset.theme = "light"
+      setIsDarkTheme(false)
+    } else {
+      document.documentElement.dataset.theme = "dark"
+      setIsDarkTheme(true)
+    }
+  }
+
   return (
-    <div className="menuContainer" onClick={() => toggleMenu((prev) => !prev)}>
-      <div className="menu_icon">
-        {showMenu ? <CloseMenuIcon /> : <img src="assets/caute.png" />}
+    <>
+      <div className="menu-icon menu-icon_theme" onClick={switchTheme}>
+        {isDarkTheme ? <SunIcon /> : <MoonIcon />}
       </div>
-      {showMenu && (
-        <div className="innerMenuContainer">
-          <h4>Filtres</h4>
-          <ul>
-            <MenuItemVisibility
-              onClick={handleClickOnToggleVisibility("showAppendix")}
-              selected={showAppendix}
-              label="Appendix"
-            />
-            <MenuItemVisibility
-              onClick={handleClickOnToggleVisibility("showAxioma")}
-              selected={showAxioma}
-              label="Axioma"
-            />
-            <MenuItemVisibility
-              onClick={handleClickOnToggleVisibility("showCaput")}
-              selected={showCaput}
-              label="Caput"
-            />
-            <MenuItemVisibility
-              onClick={handleClickOnToggleVisibility("showCorollarium")}
-              selected={showCorollarium}
-              label="Corollarium"
-            />
-            <MenuItemVisibility
-              onClick={handleClickOnToggleVisibility("showDefinitio")}
-              selected={showDefinitio}
-              label="Definitio"
-            />
-            <MenuItemVisibility
-              onClick={handleClickOnToggleVisibility("showDemonstratio")}
-              selected={showDemonstratio}
-              label="Demonstratio"
-            />
-            <MenuItemVisibility
-              onClick={handleClickOnToggleVisibility("showLemma")}
-              selected={showLemma}
-              label="Lemma"
-            />
-            <MenuItemVisibility
-              onClick={handleClickOnToggleVisibility("showPropositio")}
-              selected={showPropositio}
-              label="Propositio"
-            />
-            <MenuItemVisibility
-              onClick={handleClickOnToggleVisibility("showPostulatum")}
-              selected={showPostulatum}
-              label="Postulatum"
-            />
-            <MenuItemVisibility
-              onClick={handleClickOnToggleVisibility("showPraefatio")}
-              selected={showPraefatio}
-              label="Praefatio"
-            />
-            <MenuItemVisibility
-              onClick={handleClickOnToggleVisibility("showScholium")}
-              selected={showScholium}
-              label="Scholium"
-            />
-          </ul>
+      <div
+        className="menuContainer"
+        onClick={() => toggleMenu((prev) => !prev)}
+      >
+        <div className="menu-icon">
+          {showMenu ? <CloseMenuIcon /> : <MenuIcon />}
         </div>
-      )}
+        {showMenu && (
+          <div className="innerMenuContainer">
+            <h4>Filtres</h4>
+            <ul>
+              <MenuItemVisibility
+                onClick={handleClickOnToggleVisibility("showAppendix")}
+                selected={showAppendix}
+                label="Appendix"
+              />
+              <MenuItemVisibility
+                onClick={handleClickOnToggleVisibility("showAxioma")}
+                selected={showAxioma}
+                label="Axioma"
+              />
+              <MenuItemVisibility
+                onClick={handleClickOnToggleVisibility("showCaput")}
+                selected={showCaput}
+                label="Caput"
+              />
+              <MenuItemVisibility
+                onClick={handleClickOnToggleVisibility("showCorollarium")}
+                selected={showCorollarium}
+                label="Corollarium"
+              />
+              <MenuItemVisibility
+                onClick={handleClickOnToggleVisibility("showDefinitio")}
+                selected={showDefinitio}
+                label="Definitio"
+              />
+              <MenuItemVisibility
+                onClick={handleClickOnToggleVisibility("showDemonstratio")}
+                selected={showDemonstratio}
+                label="Demonstratio"
+              />
+              <MenuItemVisibility
+                onClick={handleClickOnToggleVisibility("showLemma")}
+                selected={showLemma}
+                label="Lemma"
+              />
+              <MenuItemVisibility
+                onClick={handleClickOnToggleVisibility("showPropositio")}
+                selected={showPropositio}
+                label="Propositio"
+              />
+              <MenuItemVisibility
+                onClick={handleClickOnToggleVisibility("showPostulatum")}
+                selected={showPostulatum}
+                label="Postulatum"
+              />
+              <MenuItemVisibility
+                onClick={handleClickOnToggleVisibility("showPraefatio")}
+                selected={showPraefatio}
+                label="Praefatio"
+              />
+              <MenuItemVisibility
+                onClick={handleClickOnToggleVisibility("showScholium")}
+                selected={showScholium}
+                label="Scholium"
+              />
+            </ul>
+          </div>
+        )}
+      </div>
       <style jsx>{menuStyles}</style>
-    </div>
+    </>
   )
 }
 
 const menuStyles = css`
   .menuContainer {
   }
-  .menu_icon {
+  .menu-icon {
     cursor: pointer;
     height: auto;
     position: fixed;
     right: 15px;
     top: 20px;
     z-index: 2;
+  }
+  .menu-icon_theme {
+    right: 45px;
   }
   img {
     height: 55px;

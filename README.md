@@ -50,8 +50,11 @@ The text is built with React components using Nextjs framework for easy-win SSR.
 - [x] Create toggle visibility menu
 - [ ] Build pars II weird architecture
 - [ ] Refacto pars prop with pars constant
+- [ ] Add Demonstratio to each propositio in every pars
+- [ ] Create MDX part for explanations
+
+**Stying**
+- [ ] Add dark theme for our poor eyes
 - [ ] Style Appendix, Praefatio, Propositio and so on (margins, font-size, colors, dividers if needed)
 - [ ] Find inspiration for overall design
 - [ ] Fix menu display (overflow-y is broken as css position is `fixed`)
-- [ ] Add Demonstratio to each propositio in every pars
-- [ ] Create MDX part for explanations

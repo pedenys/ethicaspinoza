@@ -2,19 +2,38 @@ import css from "styled-jsx/css"
 import { colors } from "./ds"
 
 export default css.global`
+  :root {
+    --bg-color: #f4f1de;
+    --darkblue: #3d405b;
+    --green: #81b29a;
+    --orange: #e07a5f;
+    --textColor: #333;
+    --yellow: #f2cc8f;
+  }
+
+  [data-theme="dark"] {
+    --bg-color: #333;
+    --darkblue: #3d405b;
+    --green: #81b29a;
+    --orange: #e07a5f;
+    --textColor: #f4f1de;
+    --yellow: #f2cc8f;
+  }
+
   html {
     font-size: 62.5%;
   }
 
   body {
-    background-color: ${colors.beige};
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--textColor);
     font-family: "IBM Plex Sans", sans-serif;
     font-size: 1.6rem;
     font-weight: normal;
     line-height: 1.8;
     margin: 0;
     padding: 0;
+    transition: background 1s;
   }
 
   .globalContainer {
@@ -22,14 +41,14 @@ export default css.global`
   }
 
   h1 {
-    color: #111;
+    color: var(--textColor);
     font-size: 4rem;
     font-weight: normal;
     margin: 0 0 1rem 0;
   }
 
   h2 {
-    color: #111;
+    color: var(--textColor);
     font-size: 2.4rem;
     font-weight: normal;
     letter-spacing: 0.2rem;
@@ -37,14 +56,14 @@ export default css.global`
   }
 
   h3 {
-    color: #222;
+    color: var(--textColor);
     font-size: 2rem;
     font-weight: normal;
     margin: 0;
   }
 
   h4 {
-    color: #222;
+    color: var(--textColor);
     font-weight: bold;
     font-size: 1.8rem;
     margin: 0;
@@ -55,6 +74,10 @@ export default css.global`
     font-size: 1.8rem;
     margin: 0 0 1rem 0;
     line-height: 1.5;
+  }
+
+  a {
+    color: var(--textColor);
   }
 
   [id*="pars"] {
@@ -76,7 +99,7 @@ export default css.global`
   [id*="caput"]::after,
   [id*="definitio"]::after,
   [id*="propositio"]::after {
-    background-color: #333;
+    background-color: var(--textColor);
     display: block;
     content: "";
     height: 2px;
@@ -84,16 +107,16 @@ export default css.global`
   }
 
   [id*="axioma"]::after {
-    background-color: ${colors.orange};
+    background-color: var(--orange);
   }
   [id*="caput"]::after {
-    background-color: ${colors.green};
+    background-color: var(--green);
   }
   [id*="definitio"]::after {
-    background-color: ${colors.yellow};
+    background-color: var(--yellow);
   }
   [id*="propositio"]::after {
-    background-color: ${colors.green};
+    background-color: var(--green);
   }
 
   @media screen and (min-width: 768px) {
